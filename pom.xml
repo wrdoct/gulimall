@@ -9,7 +9,7 @@
 	<name>gulimall</name>
 	<description>聚合服务</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>1.8</java.version>
 		<spring-cloud.version>2023.0.0</spring-cloud.version>
 	</properties>
 	<packaging>pom</packaging>
@@ -21,7 +21,9 @@
 		<module>gulimall-product</module>
 		<module>gulimall-ware</module>
 		<module>renren-fast</module>
-	</modules>
+		<module>renren-generator</module>
+        <module>gulimall-common</module>
+    </modules>
 
 	<!-- 指定父工程 -->
 	<parent>
