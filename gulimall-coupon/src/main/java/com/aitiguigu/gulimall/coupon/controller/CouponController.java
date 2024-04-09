@@ -1,20 +1,14 @@
 package com.aitiguigu.gulimall.coupon.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-// import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.aitiguigu.gulimall.coupon.entity.CouponEntity;
-import com.aitiguigu.gulimall.coupon.service.CouponService;
 import com.aitiguigu.common.utils.PageUtils;
 import com.aitiguigu.common.utils.R;
+import com.aitiguigu.gulimall.coupon.entity.CouponEntity;
+import com.aitiguigu.gulimall.coupon.service.CouponService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Map;
 
 
 
@@ -85,6 +79,14 @@ public class CouponController {
 		couponService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
+    }
+
+    @RequestMapping("/member/list")
+    public R membercoupons(){    //全系统的所有返回都返回R
+        // 模拟去数据库查用户对于的优惠券
+        CouponEntity couponEntity = new CouponEntity();
+        couponEntity.setCouponName("满100减10");//优惠券的名字
+        return R.ok().put("coupons",Arrays.asList(couponEntity));
     }
 
 }
