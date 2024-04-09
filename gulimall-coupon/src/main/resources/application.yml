@@ -8,17 +8,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   application:
-    name: gulimall-coupon # 改名字，对应nacos里的配置文件名
+    name: gulimall-coupon # 改名字，对应nacos里的服务名
   cloud:
     nacos:
       discovery:
         server-addr: http://192.168.177.128:8848  # /nacos
-      config:
-        server-addr: http://192.168.177.128:8848  # /nacos
-        file-extension: yaml  # 指定配置文件为yaml格式
-  config:
-    import:
-      - optional:nacos:${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
   profiles:
     active: dev
 
