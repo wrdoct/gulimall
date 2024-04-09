@@ -6,6 +6,10 @@ spring:
     password: 1234
     url: jdbc:mysql://192.168.177.128:30036/gulimall_pms?userUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://192.168.177.128:8848  # /nacos
 
 mybatis-plus:
   configuration:
